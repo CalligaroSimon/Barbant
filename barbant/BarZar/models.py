@@ -9,6 +9,8 @@ class Couleur(models.Model):
 class Biere(models.Model):
   nom = models.CharField(max_length=100)
   description = models.TextField(null=True)
+  image = models.CharField(max_length=100)
+  populaire = models.BooleanField(default=False)
   couleur = models.ForeignKey('Couleur')
 
   def __str__(self):
