@@ -1,9 +1,64 @@
 <!doctype html>
 <html>
-  <head>
+						<head>
+     <meta charset="utf-8"/>
+
      <title>{% block title %}BarBanc{% endblock %}</title> 
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-  </body>
+						</head>
+
+
+
+						<body>
+
+<header>
+	
+	<CENTER><h1>BarBanc</h1></CENTER>
+
+</header>
+
+
+
+<nav>
+        <ul>
+             <li><a href="#">Accueil</a></li>
+            
+             <li>Bières
+                           <ul>                         
+                                 <li><a href="#">Bières Blondes</a></li>
+                                 <li><a href="#">Bières Brunes</a></li>
+                                 <li><a href="#">Bières Rousses</a></li>
+                           </ul>
+             </li>
+
+            <li><a href="#">Collaborateurs</a>
+                           <ul>                         
+                                 <li><a href="#">Les collaborateurs vivants</a></li>
+                                 <li><a href="#">Les collaborateurs morts</a></li>
+                           </ul>
+            </li>
+
+            <li><a href="#">Commander</a></li>
+
+	    <li><a href="#">Identification</a>
+                           <ul>
+                                 <li><a href="#">S'inscrire</a></li>
+                                 <li><a href="#">Se connecter</a></li>
+                           </ul>
+	     </li>            
+
+       </ul>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+<footer>
+	<ul>
+		<li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Adresse</a></li>
+      	</ul>
+</footer>
+
+						</body>
 </html>
