@@ -20,6 +20,6 @@ from BarZar import urls as BarZar_urls
 
 
 urlpatterns = [
-  url(r'^', include(BarZar_urls)),  
   url(r'^admin/', include(admin.site.urls)),
+  url(r'^', include(BarZar_urls)),
 ]
