@@ -11,7 +11,7 @@ urlpatterns = [
   url(r'^commander$',views.commander),
   url(r'^SignUp$',views.SignUp),
   url(r'^Login$',views.Login),
-  url(r'^Contact$'views.Contact),
-  url(r'^FAQ$'views.FAQ), 
-  url(r'^Adresse$'views.Adresse),
+  url(r'^Contact$',views.Contact),
+  url(r'^FAQ$',views.FAQ), 
+  url(r'^Adresse$',views.Adresse),
 ]

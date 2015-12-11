@@ -3,24 +3,34 @@
 {% block title %}Page d'accueil{% endblock %}
 
 {% block content %}
-<h1>Bienvenue !</h1>
-    <p>Vous vous trouver actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
+            <h1>Bienvenue !</h1>       
+        <p>Vous vous trouver actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
     avec le plus grand rapeur/poete de tous les temps BOOBA !!!
     </p>
-    <h2>Les bières qui font fureur :</h2>
+  
+            <h2>Les bières qui font fureur :</h2>
     <section>
     {% for biere in bieres %}
-    <h3>{{biere.nom}}</h3>
-        <div class="row container">
-            <div class="col-sm-4">
-                <div class="biere_pop">
-                    <img class="biere" src="/static/images/bieres/{{ biere.image}}" />
+            <div class="container">
+                <div class="fond"> 
+      <div class="ruban"> 
+                    <h3>{{ biere.nom }}</h3>
+                    </div>     
+      <div class="ruban_gauche"></div>
+      <div class="ruban_droit"></div>
+</div>
+</br>
+                <div class="row">
+                <div class="col-sm-4">
+                    <div class="biere pop">
+                        <img class="img_biere" src="/static/images/bieres/{{ biere.image }}" />
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <p class="descri" >{{ biere.description }}</p>
                 </div>
             </div>
-            <div class="col-sm-8">
-                <p class="descri" >{{biere.description}}</p>
-            </div>
         </div>
-        {% endfor %}
+    {% endfor %}
     </section>
 {% endblock %}
