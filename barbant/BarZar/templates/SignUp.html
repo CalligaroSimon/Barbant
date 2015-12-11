@@ -2,10 +2,38 @@
 
 {% block title %}S'inscrire{% endblock %}
 
+{% block head %}
+  <link rel='stylesheet' href='/static/css/register.css'/ >
+  <script src="/static/js/register.js"></script>
+{% endblock %} 
+
 {% block content %}
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-  </form>
+  <legend> Rejoignez nous !</legend>
+  <section class="col-sm-offset-4 col-sm-4">
+    {{ form.non_field_errors }}
+    <form action="" method="post" accept-charset="UTF-8" name="login" id="formRegister">
+      {% csrf_token %}
+      <div id="tooltip-pseudo">
+        {{ form.pseudo.errors }}
+      </div>
+      {{ form.pseudo }}
+      <br/><br/>
+      <div id="tooltip-email">
+        {{ form.email.errors }}
+      </div>
+      {{ form.email }}
+      <br/><br/>
+      <div id="tooltip-pass1">
+        {{ form.pass1.errors }}
+      </div>
+      {{ form.pass1 }}
+      <br/><br/>
+      <div id="tooltip-pass2">
+        {{ form.pass2.errors }}
+      </div>
+      {{ form.pass2 }}
+      <br/><br/>
+      <button type="submit" name="submit" class="btn btn-info">S'enregistrer</button><br/>
+    </form>
+  </section>
 {% endblock %}

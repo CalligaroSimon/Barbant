@@ -3,10 +3,10 @@ from django import forms
 from django.contrib.auth.models import User
 
 class inscriptionsForm(forms.Form):
-  pseudo = forms.CharField(label="Pseudo", max_length=30)
-  email = forms.EmailField(label="Email")
-  pass1 = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
-  pass2 = forms.CharField(label="Retaper le mot de passe", widget=forms.PasswordInput)
+  pseudo = forms.CharField(label="Pseudo", max_length=30, widget=forms.TextInput(attrs={'class': "span4 form-control", "placeholder" : "Nom d'utilisateur"}))
+  email = forms.EmailField(label="Email", widget=forms.EmailInput(attrs={'class': "span4 form-control", "placeholder" : "Email" }))
+  pass1 = forms.CharField(label="Mot de passe", widget=forms.PasswordInput(attrs={'class': "span4 form-control", "placeholder" : "Mot de passe"}))
+  pass2 = forms.CharField(label="Retaper le mot de passe", widget=forms.PasswordInput(attrs={'class': "span4 form-control", "placeholder" : "Confirmer le mot de passe"}))
   
   def clean(self):
     cleaned_data = super(inscriptionsForm, self).clean()
