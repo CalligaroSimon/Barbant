@@ -3,19 +3,23 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <h1>Se connecter</h1>
+    <legend>Se connecter</legend>
 
     {% if error %}
     <p><strong>Nom utilisateur inconnu ou mauvais de mot de passe.</strong></p>
     {% endif %}
-
-    {% if user.is_authenticated %}
-        Vous êtes déja connecté, {{ user.username }} !
-    {% else %}
-    <form method="post" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Se connecter" />
-    </form>
-    {% endif %}
+    <section class="col-sm-offset-4 col-sm-4">
+        {% if user.is_authenticated %}
+            Vous êtes déja connecté, {{ user.username }} !
+        {% else %}
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.username }}
+            <br/>
+            {{ form.password }}
+            <br/>
+            <input type="submit" value="Se connecter" class="btn btn-info"/>
+        </form>
+        {% endif %}
+    </section>
 {% endblock %}

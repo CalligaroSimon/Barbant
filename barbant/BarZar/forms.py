@@ -31,5 +31,5 @@ class inscriptionsForm(forms.Form):
     return cleaned_data
     
 class ConnexionForm(forms.Form):
-    username = forms.CharField(label="Nom d'utilisateur", max_length=30)
-    password = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
+    username = forms.CharField(label="Nom d'utilisateur", max_length=30, widget=forms.TextInput(attrs={'class': "span4 form-control", "placeholder" : "Nom d'utilisateur"}))
+    password = forms.CharField(label="Mot de passe", widget=forms.PasswordInput(attrs={'class': "span4 form-control", "placeholder" : "Mot de passe"}))
