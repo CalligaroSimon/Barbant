@@ -4,7 +4,14 @@
 	<h1>{{ titre }}</h1>
 	{% for biere in bieres %}
 		<h2>{{ biere.nom }}</h2>
-        <div><img src="/static/images/bieres/{{ biere.image}}" /></div>
-		<p>{{ biere.description }}</p>
+            <div class="row container">
+                <div class="col-sm-4">
+                    <img class="biere" src="/static/images/bieres/{{ biere.image}}" />
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <p class="descri" >{{biere.description}}</p>
+            </div>
+        </div>
 	{% endfor %}
 {% endblock %}

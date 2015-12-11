@@ -29,4 +29,20 @@ def bieres_autres(request):
 def collaborateurs(request):
   return render(request, 'collaborateurs.html', locals())
 
+def commander(request):
+  return render(request, 'commander.html', locals())
 
+def SignUp(request):
+  return render(request, 'SignUp.html', locals())
+  
+def Login(request):
+  return render(request, 'Login.html', locals())
+
+def Contact(request):
+  return render(request, 'Contact.html', locals())
+
+def FAQ(request):
+  return render(request, 'FAQ.html', locals())
+
+def Adresse(request):
+  return render(request, 'Adresse.html', locals())
