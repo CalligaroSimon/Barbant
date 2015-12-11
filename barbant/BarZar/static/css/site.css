@@ -18,3 +18,18 @@ body {
 .black {
 	background-color : black;
 }
+
+.banniere {
+    width : 100%;
+}
+
+.biere_pop {
+    height : 325px;
+    width : 275px;
+    border: 5px inset gold;
+}
+
+.biere {
+    width : 100%;
+    height : 100%;
+}

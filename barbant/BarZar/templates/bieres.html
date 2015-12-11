@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}{{ titre }}{% endblock %}
+{% block content %}
+	<h1>{{ titre }}</h1>
+	{% for biere in bieres %}
+		<h2>{{ biere.nom }}</h2>
+        <div><img src="/static/images/bieres/{{ biere.image}}" /></div>
+		<p>{{ biere.description }}</p>
+	{% endfor %}
+{% endblock %}
