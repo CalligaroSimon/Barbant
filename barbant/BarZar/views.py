@@ -2,9 +2,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from BarZar.models import Couleur, Biere
-from BarZar.forms import inscriptionsForm
+from BarZar.forms import inscriptionsForm, ConnexionForm
 from django.contrib.auth.models import User
-
+from django.contrib.auth import authenticate, login, logout
 def accueil(request):
   bieres = Biere.objects.filter(populaire="true");
   return render(request, 'accueil.html', locals())
@@ -35,7 +35,7 @@ def collaborateurs(request):
 def commander(request):
   return render(request, 'commander.html', locals())
 
-def SignUp(request):
+def inscription(request):
   if request.method == 'POST':
     form = inscriptionsForm(request.POST)
 
@@ -51,8 +51,26 @@ def SignUp(request):
     form = inscriptionsForm()
   return render(request, 'SignUp.html', locals())
   
-def Login(request):
+def connexion(request):
+  error = False
+
+  if request.method == "POST":
+    form = ConnexionForm(request.POST)
+    if form.is_valid():
+      username = form.cleaned_data["username"]
+      password = form.cleaned_data["password"]
+      user = authenticate(username=username, password=password)
+      if user:
+        login(request, user)
+      else:
+        error = True
+  else:
+    form = ConnexionForm()
   return render(request, 'Login.html', locals())
+
+def deconnexion(request):
+    logout(request)
+    return redirect("/")
 
 def Contact(request):
   return render(request, 'Contact.html', locals())

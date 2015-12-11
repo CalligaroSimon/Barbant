@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 
 class inscriptionsForm(forms.Form):
-  pseudo = forms.CharField(label="Pseudo", max_length=100)
+  pseudo = forms.CharField(label="Pseudo", max_length=30)
   email = forms.EmailField(label="Email")
   pass1 = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
   pass2 = forms.CharField(label="Retaper le mot de passe", widget=forms.PasswordInput)
@@ -29,3 +29,7 @@ class inscriptionsForm(forms.Form):
         self.add_error("pass2", "Les mots de passe doivent être indentique")
     
     return cleaned_data
+    
+class ConnexionForm(forms.Form):
+    username = forms.CharField(label="Nom d'utilisateur", max_length=30)
+    password = forms.CharField(label="Mot de passe", widget=forms.PasswordInput)
