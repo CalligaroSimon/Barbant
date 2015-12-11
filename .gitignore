@@ -1,0 +1,5 @@
+*.pyc
+*~
+*.eclipse
+*.idea
+*.bak
