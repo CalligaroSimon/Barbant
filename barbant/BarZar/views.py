@@ -45,6 +45,8 @@ def inscription(request):
       pass1 = form.cleaned_data['pass1']
       
       User.objects.create_user(pseudo, email, pass1)
+      user = authenticate(username=pseudo, password=pass1)
+      login(request, user)
       return redirect("/")
 
   else:
