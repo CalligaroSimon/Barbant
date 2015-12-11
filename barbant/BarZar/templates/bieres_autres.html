@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}Autres bières{% endblock %}
+{% block content %}
+	<h1>Autres Bières</h1>
+	{% for biere in bieres %}
+		<h2>{{ biere.nom }}</h2>
+		<p>{{ biere.description }}</p>
+	{% endfor %}
+{% endblock %}

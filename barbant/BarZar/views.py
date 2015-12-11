@@ -17,3 +17,11 @@ def bieres_brunes(request):
   bieres = Biere.objects.filter(couleur__nom="Brune");
   return render(request, 'bieres_brunes.html', locals())
 
+def bieres_autres(request):
+  bieres = Biere.objects.filter(couleur__nom="Autre");
+  return render(request, 'bieres_autres.html', locals())
+  
+def collaborateurs(request):
+  return render(request, 'collaborateurs.html', locals())
+
+
