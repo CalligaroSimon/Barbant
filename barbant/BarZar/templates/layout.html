@@ -14,68 +14,68 @@
 	<body>
 		<div class="content container">
             <header>
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 text-center hidden-xs hidden-sm">
                             <img class="img-reponsive banniere" src="/static/images/banniere/banner.jpg" />
                         </div>
                     </div>
                     </br>
-                        <nav class="navbar navbar-inverse row">
-                            <div class="container-fluid"> 
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                        <a class="navbar-brand" href="/">BarBanc</a>
-                                </div>
-                                <div id="navbar" class="navbar-collapse collapse">
-                                    <ul class="nav navbar-nav" >
-                                        <li class=dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="/bieres">Bières<span class="caret"></span></a> 
-                                            <ul class="dropdown-menu">
-                                                <li><a href="/bieres/blondes">Blondes</a> </li>
-                                                <li><a href="/bieres/brunes">Brunes</a> </li>
-                                                <li><a href="/bieres/rousses">Rousses</a> </li>
-                                                <li><a href="/bieres/autres">Autres</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="/collaborateurs">Collaborateur</a> </li>
-                                        <li> <a href="/commander">Commander</a> </li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="/SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                        <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                    </ul>
-                                </div>
+                    <nav class="navbar navbar-inverse row">
+                        <div class="container-fluid"> 
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                    <a class="navbar-brand" href="/">BarBanc</a>
                             </div>
-                        </nav>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav" >
+                                    <li class=dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="/bieres">Bières<span class="caret"></span></a> 
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/bieres/blondes">Blondes</a> </li>
+                                            <li><a href="/bieres/brunes">Brunes</a> </li>
+                                            <li><a href="/bieres/rousses">Rousses</a> </li>
+                                            <li><a href="/bieres/autres">Autres</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="/collaborateurs">Collaborateur</a> </li>
+                                    <li> <a href="/commander">Commander</a> </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="/SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                    <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        {% block content %}{% endblock %}
                     </div>
-		</header>
-		<div class="container ">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					{% block content %}{% endblock %}
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
 
-		<footer>
-			<div class="container text-center">
-				<hr/>
-				<nav class="navbar navbar-inverse">
-                    <div class="container-fluid">
-						<ul class="nav nav-justified">
-							<li><a href="/Contact" >Contact</a></li>
-							<li><a href="/FAQ" >FAQ</a></li>
-							<li><a href="/Adresse" >Adresse</a></li>
-                        </ul>
-					</div>
-				</nav>
-			</div>
-		</footer>
-	</div>
-	</body>
+            <footer>
+                <div class="container-fluid text-center">
+                    <hr/>
+                    <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                            <ul class="nav nav-justified">
+                                <li><a href="/Contact" >Contact</a></li>
+                                <li><a href="/FAQ" >FAQ</a></li>
+                                <li><a href="/Adresse" >Adresse</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </body>
 </html>

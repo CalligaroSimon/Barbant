@@ -3,31 +3,35 @@
 {% block title %}Page d'accueil{% endblock %}
 
 {% block content %}
-            <h1>Bienvenue !</h1>       
-        <p>Vous vous trouver actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
+    <h1>Bienvenue !</h1>       
+    <p>Vous vous trouver actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
     avec le plus grand rapeur/poete de tous les temps BOOBA !!!
     </p>
   
-            <h2>Les bières qui font fureur :</h2>
-    <section>
+    <h2>Les bières qui font fureur :</h2>
+    <section class="container-fluid">
     {% for biere in bieres %}
-            <div class="container">
-                <div class="fond"> 
-      <div class="ruban"> 
-                    <h3>{{ biere.nom }}</h3>
-                    </div>     
-      <div class="ruban_gauche"></div>
-      <div class="ruban_droit"></div>
-</div>
-</br>
+        <div class="row">
+            <div class="container-fluid">
                 <div class="row">
-                <div class="col-sm-4">
-                    <div class="biere pop">
-                        <img class="img_biere" src="/static/images/bieres/{{ biere.image }}" />
+                    <div class="fond"> 
+                        <div class="ruban"> 
+                            <h3>{{ biere.nom }}</h3>
+                        </div>     
+                        <div class="ruban_gauche"></div>
+                        <div class="ruban_droit"></div>
                     </div>
                 </div>
-                <div class="col-sm-8">
-                    <p class="descri" >{{ biere.description }}</p>
+                </br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="biere pop">
+                            <img class="img_biere" src="/static/images/bieres/{{ biere.image }}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="descri" >{{ biere.description }}</p>
+                    </div>
                 </div>
             </div>
         </div>

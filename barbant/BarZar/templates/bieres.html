@@ -1,32 +1,35 @@
 {% extends "layout.html" %}
-{% block title %}{{ titre }}{% endblock %}
+
+{% block title %} {{ titre }} {% endblock %}
+
 {% block content %}
-   
-        <h2>{{ titre }}</h2>   
-	{% for biere in bieres %}
-    <div class="container">
+    <h2>{{ titre }}</h2>
+    <section class="container-fluid">
+    {% for biere in bieres %}
         <div class="row">
-            <div class="col-lg-12">
-                <div class="fond"> 
-                    <div class="ruban"> 
-                        <h3>{{ biere.nom }}</h3>
-                    </div>     
-                    <div class="ruban_gauche"></div>
-                    <div class="ruban_droit"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="fond"> 
+                        <div class="ruban"> 
+                            <h3>{{ biere.nom }}</h3>
+                        </div>     
+                        <div class="ruban_gauche"></div>
+                        <div class="ruban_droit"></div>
+                    </div>
+                </div>
+                </br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="biere ">
+                            <img class="img_biere" src="/static/images/bieres/{{ biere.image }}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="descri" >{{ biere.description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-        </br>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="biere">
-                    <img class="img_biere" src="/static/images/bieres/{{ biere.image }}" />
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <p class="descri" >{{biere.description}}</p>
-            </div>
-         </div>
-    </div>
     {% endfor %}
+    </section>
 {% endblock %}
