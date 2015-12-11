@@ -1,6 +1,9 @@
 # coding: utf8
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from BarZar.models import Couleur, Biere
+from BarZar.forms import inscriptionsForm
+from django.contrib.auth.models import User
 
 def accueil(request):
   bieres = Biere.objects.filter(populaire="true");
@@ -33,6 +36,19 @@ def commander(request):
   return render(request, 'commander.html', locals())
 
 def SignUp(request):
+  if request.method == 'POST':
+    form = inscriptionsForm(request.POST)
+
+    if form.is_valid():
+      pseudo = form.cleaned_data['pseudo']
+      email = form.cleaned_data['email']
+      pass1 = form.cleaned_data['pass1']
+      
+      User.objects.create_user(pseudo, email, pass1)
+      return redirect("/")
+
+  else:
+    form = inscriptionsForm()
   return render(request, 'SignUp.html', locals())
   
 def Login(request):
