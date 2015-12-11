@@ -45,9 +45,18 @@
                                     <li> <a href="/collaborateurs">Collaborateur</a> </li>
                                     <li> <a href="/commander">Commander</a> </li>
                                 </ul>
+                                
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="/SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                    <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="#">{{ user.username }}</a></li>
+                                    {% if user.is_staff %} 
+                                    <li><a href="/admin"><span class="glyphicon glyphicon-king"></span> Administration</a></li>
+                                    {% endif %}
+                                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Deconnection</a></li>
+                                    {% else %}
+                                    <li><a href="/SignUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+                                    <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
