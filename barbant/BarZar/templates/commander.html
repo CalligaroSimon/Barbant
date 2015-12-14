@@ -14,8 +14,9 @@
     <tbody>
         {% for biere in bieres %}
             <tr>
-                <td class="titre_biere" >{{ biere.nom }} : </td>
+                <td class="prix" >{{ biere.nom }} : </td>
                 <td class="prix" >{{ biere.prix }} €</td>
+                <td><input type=number min=0 /></td>
             </tr>
         {% endfor %}
     </tbody>
