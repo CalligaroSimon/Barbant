@@ -3,7 +3,21 @@
 {% block title %}Commader{% endblock %}
 
 {% block content %}
-<h1>Commande :</h1>
-
-
+<h1><span class="titre_op">Commande :</span></h1>
+<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Nom</th>
+            <th>prix</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {% for biere in bieres %}
+            <tr>
+                <td class="titre_biere" >{{ biere.nom }} : </td>
+                <td class="prix" >{{ biere.prix }} €</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

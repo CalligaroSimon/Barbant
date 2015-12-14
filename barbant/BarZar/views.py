@@ -5,6 +5,7 @@ from BarZar.models import Couleur, Biere
 from BarZar.forms import inscriptionsForm, ConnexionForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+
 def accueil(request):
   bieres = Biere.objects.filter(populaire="true");
   return render(request, 'accueil.html', locals())
@@ -33,6 +34,7 @@ def collaborateurs(request):
   return render(request, 'collaborateurs.html', locals())
 
 def commander(request):
+  bieres = Biere.objects.all()
   return render(request, 'commander.html', locals())
 
 def inscription(request):

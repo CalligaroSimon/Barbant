@@ -42,20 +42,21 @@ body {
   	background-color : rgba(255,255,255,0.6);
 	border: 1px solid black;
 	border-radius : 5px;
-    color : black;
+    font-family : Georgia, Arial; 
     padding : 10px;
     text-align : center;
 }
 
 .fond {
-position: relative;
-margin: 0px auto;
-width: 350px;
-background: #fff;
-border-radius: 5px;
-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-z-index: 10;
-height:110px;
+    position: relative;
+    margin: 0px auto;
+    width: 350px;
+    background-image :url(/static/images/banniere/tonneau.jpg); 
+    background-size : 100% 100%; 
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+    height:110px;
 }
  
 .ruban {
@@ -100,4 +101,25 @@ height:110px;
     left: 350px;
     top: 35px;
     z-index: -1;
+}
+
+.titre_biere {
+    color : black;
+    font-family : Georgia, Arial; 
+
+}
+
+.titre_op {
+    color : gold;
+    font-size: 70px;
+    text-shadow: 0 -2px 0 #222222;
+    font-family : Trebuchet MS, Georgia, Arial; 
+}
+
+.prix {
+    color : gold;
+    font-size : 30px;
+    text-shadow: 0 -2px 0 #222222;
+    font-family : Trebuchet MS, Georgia, Arial;
+    
 }

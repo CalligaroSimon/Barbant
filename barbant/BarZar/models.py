@@ -12,6 +12,7 @@ class Biere(models.Model):
   image = models.CharField(max_length=100)
   populaire = models.BooleanField(default=False)
   couleur = models.ForeignKey('Couleur')
+  prix = models.FloatField(default=4.99)
 
   def __str__(self):
     return self.nom

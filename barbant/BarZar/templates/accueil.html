@@ -3,12 +3,11 @@
 {% block title %}Page d'accueil{% endblock %}
 
 {% block content %}
-    <h1>Bienvenue !</h1>       
-    <p>Vous vous trouver actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
-    avec le plus grand rapeur/poete de tous les temps BOOBA !!!
+    <h1><span class="titre_op">Bienvenue !</span></h1>       
+    <p class="descri" >Vous vous trouvez actuellemnt sur la page d'acceuil du BarBanc le seul bar à bières au monde en collaboration
+    avec le plus grand rapeur/poete de tous les temps BOOBA !!! </br>
+    Je vous propose notre selection des bières les plus populaires en ce moment :
     </p>
-  
-    <h2>Les bières qui font fureur :</h2>
     <section class="container-fluid">
     {% for biere in bieres %}
         <div class="row">
@@ -16,7 +15,7 @@
                 <div class="row">
                     <div class="fond"> 
                         <div class="ruban"> 
-                            <h3>{{ biere.nom }}</h3>
+                            <h3><a class="titre_biere">{{ biere.nom }}</a></h3>
                         </div>     
                         <div class="ruban_gauche"></div>
                         <div class="ruban_droit"></div>
@@ -31,6 +30,7 @@
                     </div>
                     <div class="col-sm-8">
                         <p class="descri" >{{ biere.description }}</p>
+                        <p class="prix" >{{ biere.prix }} €</p>
                     </div>
                 </div>
             </div>
